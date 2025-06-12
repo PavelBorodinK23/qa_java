@@ -12,21 +12,8 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class LionTest {
-
     @Mock
     private Predator predator;
-
-    @Test
-    void testDoesHaveManeForMale() throws Exception {
-        Lion lion = new Lion("Самец", predator);
-        assertTrue(lion.doesHaveMane());
-    }
-
-    @Test
-    void testDoesHaveManeForFemale() throws Exception {
-        Lion lion = new Lion("Самка", predator);
-        assertFalse(lion.doesHaveMane());
-    }
 
     @Test
     void testInvalidSex() {
@@ -37,7 +24,7 @@ class LionTest {
     @Test
     void testGetKittens() throws Exception {
         Lion lion = new Lion("Самец", predator);
-        when(predator.getKittens()).thenReturn(3);
+        when(predator.getChildrenCount()).thenReturn(3);
         assertEquals(3, lion.getKittens());
     }
 

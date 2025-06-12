@@ -12,7 +12,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class CatTest {
-
     @Mock
     private Feline feline;
 

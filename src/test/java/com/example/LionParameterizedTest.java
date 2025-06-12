@@ -15,7 +15,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class LionParameterizedTest {
-
     @Mock
     private Predator predator;
 
@@ -34,14 +33,14 @@ class LionParameterizedTest {
     }
 
     @ParameterizedTest
-    @MethodSource("provideKittenCounts")
-    void testGetKittens(int kittenCount) throws Exception {
-        when(predator.getKittens()).thenReturn(kittenCount); // Исправлено
+    @MethodSource("provideChildrenCounts")
+    void testGetKittens(int childrenCount) throws Exception {
+        when(predator.getChildrenCount()).thenReturn(childrenCount);
         Lion lion = new Lion("Самец", predator);
-        assertEquals(kittenCount, lion.getKittens());
+        assertEquals(childrenCount, lion.getKittens());
     }
 
-    private static Stream<Arguments> provideKittenCounts() {
+    private static Stream<Arguments> provideChildrenCounts() {
         return Stream.of(
                 Arguments.of(0),
                 Arguments.of(1),

@@ -9,7 +9,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FelineTest {
-
     @Test
     void testEatMeat() throws Exception {
         Feline feline = new Feline();
@@ -24,9 +23,9 @@ class FelineTest {
     }
 
     @Test
-    void testGetKittensWithoutParameter() {
+    void testGetChildrenCount() {
         Feline feline = new Feline();
-        assertEquals(1, feline.getKittens());
+        assertEquals(1, feline.getChildrenCount());
     }
 
     @ParameterizedTest
