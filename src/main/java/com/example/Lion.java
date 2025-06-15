@@ -2,9 +2,9 @@ package com.example;
 import java.util.List;
 public class Lion {
     private boolean hasMane;
-    private Predator predator;
-    public Lion(String sex, Predator predator) throws Exception {
-        this.predator = predator;
+    private Feline feline;
+    public Lion(String sex, Feline feline) throws Exception {
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -14,12 +14,12 @@ public class Lion {
         }
     }
     public int getKittens() {
-        return predator.getChildrenCount();
+        return feline.getKittens();
     }
     public boolean doesHaveMane() {
         return hasMane;
     }
     public List<String> getFood() throws Exception {
-        return predator.eatMeat();
+        return feline.eatMeat();
     }
 }
